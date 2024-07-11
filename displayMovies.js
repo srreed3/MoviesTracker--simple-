@@ -4,9 +4,21 @@ document.addEventListener('DOMContentLoaded', function() {
     function updatePages() {
         clearPages();
         movieEntries.sort((a, b) => a.title.localeCompare(b.title));
+        let containerContent = {
+            'first-container': false,
+            'second-container': false,
+            'third-container': false,
+            'fourth-container': false,
+            'fifth-container': false,
+            'sixth-container': false
+        };
+
         movieEntries.forEach((movie, index) => {
             let firstLetter = movie.title[0].toUpperCase();
-            let listItem = `<li id="individualMovie"><strong>${movie.title}</strong>`;
+
+            // Add delete button with onclick event
+            let listItem = `<li id="individualMovie"><button id="delete-btn" onclick="deleteMovie(${index})">Delete</button>`;
+            listItem += `<br><strong>${movie.title.toUpperCase()}</strong>`;
 
             if (movie.relDate) {
                 listItem += `<br>Release Date: ${movie.relDate}`;
@@ -18,18 +30,29 @@ document.addEventListener('DOMContentLoaded', function() {
                 listItem += `<br>Length: ${movie.length}`;
             }
             if (movie.file) {
-                listItem += `<br><img src="${movie.file}" alt="${movie.title} picture" style="max-width: 200px; max-height: 200px;">`;
+                listItem += `<br><div id="img-container"><img src="${movie.file}" alt="${movie.title} picture" style="max-width: 200px; max-height: 200px;"></div>`;
             }
 
-            // Add delete button with onclick event
-            listItem += `<br><button onclick="deleteMovie(${index})">Delete</button>`;
             // Add update link with href to update.html passing movie index
-            listItem += `<br><a href="update.html?index=${index}">Update</a>`;
+            listItem += `<a href="update.html?index=${index}" id="update-btn">Update</a>`;
             listItem += `</li>`;
 
             let container = getContainerElement(firstLetter);
-            if (container) container.innerHTML += listItem;
+            if (container) {
+                container.innerHTML += listItem;
+                containerContent[container.id] = true; // Mark container as having content
+            }
         });
+
+        // Check each container and add the message if empty
+        for (let containerId in containerContent) {
+            if (!containerContent[containerId]) {
+                let container = document.getElementById(containerId);
+                if (container) {
+                    container.innerHTML = `<li id="sad-message"><img src="images/sad_face.png" alt="Sad face" style="max-width: 200px; max-height: 200px;"><p>There's no movies here yet.</p></li>`;
+                }
+            }
+        }
     }
 
     function clearPages() {

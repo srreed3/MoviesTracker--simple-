@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
         ulContainer.innerHTML = ''; // Clear existing list
         
         movieEntries.forEach(movie => {
-            let listItem = `<li id="individualMovie1">${movie.title}</li>`;
+            movieEntries.sort((a, b) => a.title.localeCompare(b.title));
+            let listItem = `<li id="individualMovie1">${movie.title.toUpperCase()}</li>`;
             ulContainer.innerHTML += listItem;
         });
 
