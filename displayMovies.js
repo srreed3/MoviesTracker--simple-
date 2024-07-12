@@ -29,6 +29,11 @@ document.addEventListener('DOMContentLoaded', function() {
             if (movie.length) {
                 listItem += `<br>Length: ${movie.length}`;
             }
+            if (movie.lastWatchedDate) {
+                // Format the date properly before displaying
+                let formattedDate = new Date(movie.lastWatchedDate).toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' });
+                listItem += `<br>Last Watched: ${formattedDate}`;
+            }
             if (movie.file) {
                 listItem += `<br><div id="img-container"><img src="${movie.file}" alt="${movie.title} picture" style="max-width: 200px; max-height: 200px;"></div>`;
             }
@@ -49,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!containerContent[containerId]) {
                 let container = document.getElementById(containerId);
                 if (container) {
-                    container.innerHTML = `<li id="sad-message"><img src="images/sad_face.png" alt="Sad face" style="max-width: 200px; max-height: 200px;"><p>There's no movies here yet.</p></li>`;
+                    container.innerHTML = `<li id="sad-message"><img src="images/sad_face.png" alt="Sad face" style="max-width: 250px; max-height: 250px;"><p>There's no movies here yet.</p></li>`;
                 }
             }
         }

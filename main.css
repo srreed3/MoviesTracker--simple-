@@ -239,7 +239,7 @@ h3 {
   align-self: flex-end; /* Align button to the bottom */
   text-align: center; /* Center the text inside the button */
   width: 93%;
-  margin-top: 10px;
+  margin-top: 50px;
 }
 
 #delete-btn {
@@ -268,6 +268,8 @@ h3 {
   display: flex;
   justify-content: center;  
   padding: 10px;
+  position: relative;
+  top: 20px;
 } 
 /*image display for movie posters end*/
 
@@ -281,7 +283,6 @@ h3 {
 
 li img {
   border: 2px solid black;
-  padding: 10px;
 }
 
 li p {
@@ -289,5 +290,27 @@ li p {
   right: 65px;
   font-size: 30px;
 }
-
 /*sad message for no movies end*/
+
+
+/*popup start*/
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 10;
+  font-size: 20px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.popup.show {
+  opacity: 1;
+}
+/*popup end*/

@@ -6,6 +6,7 @@
     <title>Movie Organization Magic</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='add_update.css'>
 </head>
 <header>
     <div class="header-container">
@@ -44,22 +45,23 @@
         </select>
 
         <label for="length">Length:</label>
-        <input type="text" id="length" name="length" placeholder="Enter Movie Length">
+        <input type="number" id="hrs" name="hrs" min="0" max="10" placeholder="Hrs">
+        <input type="number" id="mins" name="mins" min="0" max="59" placeholder="Mins"><br>
 
+        <label for="lastwatchedDate">Last Watched:</label>
+        <input type="date" id="lastwatchedDate" name="lastwatchedDate">
+        
         <label for="file">Add Picture:</label>
         <input type="file" id="file" name="file" accept="/images">
 
         <div class="subButton">
-            <button id="submit" type="submit">SUBMIT</button>
+            <button id="submit" type="submit">Submit</button>
         </div>
     </form>
 
     <div>
       <img src="images/ratings.jpg" alt="Movie Ratings"> 
     </div>
-
-
-
 
 </body>
 <footer>
