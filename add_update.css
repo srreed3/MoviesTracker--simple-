@@ -62,7 +62,7 @@ input, select {
 }
 /*form end*/
 
-img {
+.movieRatings {
     width: 30%;
     position: relative;
     left: 1075px;
