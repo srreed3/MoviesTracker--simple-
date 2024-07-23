@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let rating = document.getElementById('rating').value.trim();
         let hrs = document.getElementById('hrs').value.trim();
         let mins = document.getElementById('mins').value.trim();
-        let length = `${hrs ? parseInt(hrs) : 0} hr(s), ${mins ? parseInt(mins) : 0} min(s)`;
+        let length = hrs && mins ? `${hrs} hr(s), ${mins} min(s)` : '';
         let lastWatchedDate = document.getElementById('lastwatchedDate').value.trim();
         let fileInput = document.getElementById('file');
         let file = fileInput.files[0];

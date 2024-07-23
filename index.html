@@ -6,7 +6,7 @@
     <title>Movie Organization Magic</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='home.css'>
 </head>
 <header>
 
@@ -30,8 +30,31 @@
 
     <h2>Welcome to Home Page</h2>
 
+    <div class="homeTextContainer">
+      <div class="homeText1">
+        <p>Use this application to organize your movie collection. You can view, add, update, and delete your movies with ease. Only the title is required; all other information is up to your discretion.</p>
+      </div>
+
+      <div class="homeText2">
+        <p>Want to watch a movie but can't choose? Click the button below to select a random movie from your collection!</p>
+        <button id="randomSelectBtn">Select Random</button>
+        <p id="randomMovieDisplay"></p>
+      </div>
+    </div>
+
+    <div>
+      <img class="img1" src="images/movie_background.jpg" alt="Collage of Movies">
+    </div>
+
+    <div>
+      <img class="img2" src="images/film.jpg" alt="Movie Film">
+      <img class="img3" src="images/popcorn.webp" alt="Popcorn">
+    </div>
+
 </body>
 <footer>
   <p>&copy; 2024 M.O.M. LLC</p>
 </footer>
+
+<script src='randomSelect.js'></script>
 </html>

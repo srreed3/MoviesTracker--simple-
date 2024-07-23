@@ -70,9 +70,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to delete a movie
     window.deleteMovie = function(index) {
-        movieEntries.splice(index, 1);
-        localStorage.setItem('movies', JSON.stringify(movieEntries));
-        updatePages();
+        let confirmDelete = window.confirm("Are you sure you want to delete this movie?");
+        if(confirmDelete) {
+            movieEntries.splice(index, 1);
+            localStorage.setItem('movies', JSON.stringify(movieEntries));
+            updatePages();
+        }
     }
 
     // Function to retrieve container based on first letter of title

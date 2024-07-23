@@ -36,6 +36,7 @@ form {
     background: #dddcdc;
     padding-top: 30px;
     margin-top: 20px;
+    height: 400px;
 }
 
 label {
@@ -65,7 +66,7 @@ img {
     width: 30%;
     position: relative;
     left: 1075px;
-    bottom: 400px;
+    bottom: 420px;
     border: 2px solid black;
 
 }
