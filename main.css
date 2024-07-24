@@ -208,6 +208,7 @@ h2 {
   border-radius: 50%;
   padding: 15px 35px;
   margin-top: 15px;
+  margin-left: 490px;
 }
 
 h3 {
@@ -218,12 +219,12 @@ h3 {
 /*title for find all movies start*/
 .title_total-container {
   display: flex;
-  justify-content: space-evenly;
 }
 
 .title-container {
   position: relative;
   top: 30px;
+  margin-left: 400px;
 }
 /*title for find all movies end*/
 
@@ -262,6 +263,23 @@ h3 {
 }
 /*buttons for update and delete end*/
 
+/*button to delete all start*/
+#deleteAllBtn {
+  font-size: 20px;
+  padding: 10px;
+  background: #7c7979;
+  color: white;
+  padding: 10px;
+  width: 130%;
+  margin-top: 60px;
+  margin-left: 180px;
+}
+
+#deleteAllBtn:hover {
+  background: #E51837;
+  color: #f7f7f7;
+}
+/*button to delete all start*/
 
 /*image display for movie posters start*/
 #img-container {

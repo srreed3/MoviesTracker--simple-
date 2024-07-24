@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
-    
-    // Display all movies by title only; no deleting or updating
+    const deleteAllBtn = document.getElementById('deleteAllBtn');
+    const ulContainer = document.getElementById('zero-container');
+    const total = document.getElementById('total-count');
+
     function displayAllMovies() {
         let movieEntries = JSON.parse(localStorage.getItem('movies')) || [];
-        let ulContainer = document.getElementById('zero-container');
-        let total = document.getElementById('total-count');
         
         ulContainer.innerHTML = ''; // Clear existing list
         
@@ -28,5 +28,21 @@ document.addEventListener('DOMContentLoaded', function() {
         total.textContent = movieEntries.length;
     }
 
+    function deleteAllMovies() {
+        // Remove all movies from local storage
+        localStorage.removeItem('movies');
+        
+        // Update the UI to reflect the change
+        displayAllMovies();
+    }
+
+    // Add event listener to the "Delete All" button
+    deleteAllBtn.addEventListener('click', function() {
+        if (confirm('Are you sure you want to delete all movies?')) {
+            deleteAllMovies();
+        }
+    });
+
+    // Initial display of movies
     displayAllMovies();
 });
