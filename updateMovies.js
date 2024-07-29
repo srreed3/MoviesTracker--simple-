@@ -50,7 +50,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('title').value = movie.title || '';
         document.getElementById('relDate').value = movie.relDate || '';
         document.getElementById('rating').value = movie.rating || '';
-        let [hrs, mins] = movie.length = ['', ''];
+        let [hrs, mins] = movie.length.split(' hr(s), ') || ['', ''];
+        mins = mins ? mins.split(' min(s)')[0] : '';
         document.getElementById('hrs').value = hrs || '';
         document.getElementById('mins').value = mins || '';
         document.getElementById('lastwatchedDate').value = movie.lastWatchedDate || '';
